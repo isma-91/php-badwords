@@ -28,7 +28,7 @@
     ';
     $uncensored_length = strlen($paragraph_uncensored);
     $censure = $_GET['censure'];
-    $paragraph_censored = str_ireplace(trim($censure), '***', $paragraph_uncensored);
+    $paragraph_censored = str_ireplace(trim($censure), '<span class="danger">***</span>', $paragraph_uncensored);
     // il "trim" va fatto qua e non dove facciamo il _GET perchè là non lo prende
     $censored_length = strlen($paragraph_censored);
   ?>
