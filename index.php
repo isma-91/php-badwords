@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <!-- 
     Creare una variabile con un paragrafo di testo a vostra scelta.
     Stampare a schermo il paragrafo e la sua lunghezza.
@@ -27,7 +28,8 @@
     ';
     $uncensored_length = strlen($paragraph_uncensored);
     $censure = $_GET['censure'];
-    $paragraph_censored = str_ireplace($censure, '***', $paragraph_uncensored);
+    $paragraph_censored = str_ireplace(trim($censure), '***', $paragraph_uncensored);
+    // il "trim" va fatto qua e non dove facciamo il _GET perchè là non lo prende
     $censored_length = strlen($paragraph_censored);
   ?>
 
@@ -40,7 +42,7 @@
 
 
     <div class="censure">
-      <h2>A NOI NON PIACE QUESTA PAROLA!!</h2>
+      <h2 class="danger">A NOI NON PIACE QUESTA PAROLA!!</h2>
 
       <form action="" method="get">
         <label for="censure_word"></label>
@@ -48,7 +50,7 @@
         <button>CENSURA!!</button>
       </form>
 
-        <h2>TESTO CENSURATO</h2>
+        <h2>** TESTO CENSURATO **</h2>
         <!-- Metodo con l'"=", con "php echo" e  senza virgolette e/o graffe -->
         <p class="text"><?php echo $paragraph_censored ?></p>
         <p class="letter-number">Numero caratteri: <span class="number"><?php echo "${censored_length}" ?></span></p>

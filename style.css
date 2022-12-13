@@ -6,7 +6,7 @@
 
 html {
   font-family: 'Poppins', sans-serif;
-  background-color: rgb(240, 158, 149);
+  background-color: rgb(255, 213, 209);
 }
 
 .container{
@@ -55,5 +55,10 @@ button {
 .number {
   font-weight: 600;
   font-size: 22px;
-  color: gold;
+  color: goldenrod;
+  text-decoration: underline;
+}
+
+.danger {
+  color: rgb(255, 0, 0);
 }
